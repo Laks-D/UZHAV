@@ -1,0 +1,62 @@
+"use client";
+
+import Image from "next/image";
+
+export interface Profile {
+  id: string;
+  name: string;
+  bio: string;
+  tech_stack: string[];
+  avatar_url: string;
+}
+
+interface Props {
+  profile: Profile;
+  onLike: () => void;
+  onPass: () => void;
+  onSuperlike: () => void;
+}
+
+export default function ProfileCard({ profile, onLike, onPass, onSuperlike }: Props) {
+  return (
+    <div className="max-w-sm w-full bg-white rounded-xl shadow-md p-4 flex flex-col">
+      {/* Profile Header */}
+      <div className="flex items-center gap-4">
+        <Image
+          src={profile.avatar_url || "https://placehold.co/64x64"}
+          alt={profile.name}
+          width={64}
+          height={64}
+          className="rounded-full object-cover"
+        />
+        <div>
+          <h2 className="font-bold text-lg">{profile.name}</h2>
+          <p className="text-sm text-gray-600">{profile.bio}</p>
+          <p className="text-xs text-gray-500">{profile.tech_stack?.join(", ")}</p>
+        </div>
+      </div>
+
+      {/* Swipe Buttons */}
+      <div className="flex justify-around mt-4">
+        <button
+          onClick={onPass}
+          className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300 transition"
+        >
+          Pass
+        </button>
+        <button
+          onClick={onSuperlike}
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+        >
+          Superlike
+        </button>
+        <button
+          onClick={onLike}
+          className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+        >
+          Like
+        </button>
+      </div>
+    </div>
+  );
+}
