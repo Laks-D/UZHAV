@@ -1,0 +1,11 @@
+use client";
+
+import Image from "next/image";
+
+export interface Profile {
+  id: string;
+  name: string;
+  bio: string;
+  tech_stack: string[];
+  avatar_url: string;
+}
