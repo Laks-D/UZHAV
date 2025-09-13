@@ -7,6 +7,12 @@ export interface Profile {
   bio: string;
   tech_stack: string[];
   avatar_url: string;
+
+
+export interface Profile {
+  id: string;
+  name: string;
+  bio: string;
 }
 
 interface Props {
