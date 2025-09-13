@@ -7,6 +7,10 @@ export interface Profile {
   avatar_url: string;
 }
 
+export interface Profile {
+  id: string;
+  name: string;
+  bio: string;
 interface Props {
   profile: Profile;
   onLike: () => void;
