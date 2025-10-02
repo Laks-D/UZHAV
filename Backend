@@ -1,1 +1,15 @@
-
+user-api/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com.example.userapi/
+│       │       ├── UserApiApplication.java
+│       │       ├── controller/
+│       │       │   └── UserController.java
+│       │       ├── model/
+│       │       │   └── User.java
+│       │       └── service/
+│       │           └── UserService.java
+│       └── resources/
+│           └── application.properties
+├── pom.xml
